@@ -4,8 +4,7 @@ from __future__ import unicode_literals
 import types
 import copy
 
-from django import forms
-from django.forms.forms import NON_FIELD_ERRORS
+from django.core.exceptions import NON_FIELD_ERRORS
 from django.core.validators import EMPTY_VALUES
 from django.db import models
 from django.db.models.fields import FieldDoesNotExist
@@ -13,6 +12,8 @@ from django.utils import six
 from django.utils.text import capfirst
 from django.utils.translation import ugettext as _
 from sys import version_info
+
+from .compat import forms
 
 try:
     from django.db.models.constants import LOOKUP_SEP

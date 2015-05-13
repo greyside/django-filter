@@ -4,8 +4,7 @@ from __future__ import unicode_literals
 from datetime import datetime, time
 from collections import namedtuple
 
-from django import forms
-
+from .compat import forms
 from .widgets import RangeWidget, LookupTypeWidget
 
 

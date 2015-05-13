@@ -4,13 +4,13 @@ from __future__ import unicode_literals
 from datetime import timedelta
 
 
-from django import forms
 from django.db.models import Q
 from django.db.models.sql.constants import QUERY_TERMS
 from django.utils import six
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
+from .compat import forms
 from .fields import (
     RangeField, LookupTypeField, Lookup, DateRangeField, TimeRangeField)
 

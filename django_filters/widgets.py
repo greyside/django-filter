@@ -7,7 +7,6 @@ try:
 except:
     from urllib import urlencode  # noqa
 
-from django import forms
 from django.db.models.fields import BLANK_CHOICE_DASH
 from django.forms.widgets import flatatt
 try:
@@ -16,6 +15,8 @@ except:  # pragma: nocover
     from django.utils.encoding import force_unicode as force_text  # noqa
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
+
+from .compat import forms
 
 
 class LinkWidget(forms.Widget):

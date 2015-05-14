@@ -80,8 +80,8 @@ class LinkWidget(forms.Widget):
 
 
 class RangeWidget(forms.MultiWidget):
-    def __init__(self, attrs=None):
-        widgets = (forms.TextInput(attrs=attrs), forms.TextInput(attrs=attrs))
+    def __init__(self, attrs=None, widget_class=forms.TextInput):
+        widgets = (widget_class(attrs=attrs), widget_class(attrs=attrs))
         super(RangeWidget, self).__init__(widgets, attrs)
 
     def decompress(self, value):

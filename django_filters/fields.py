@@ -16,6 +16,8 @@ class RangeField(forms.MultiValueField):
             fields = (
                 forms.DecimalField(),
                 forms.DecimalField())
+        if not kwargs.get('widget', None):
+            kwargs['widget'] = RangeWidget(widget_class=fields[0].widget.__class__)
         super(RangeField, self).__init__(fields, *args, **kwargs)
 
     def compress(self, data_list):

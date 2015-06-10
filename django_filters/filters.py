@@ -92,7 +92,8 @@ class BooleanFilter(Filter):
 
     def filter(self, qs, value):
         if value is not None:
-            return qs.filter(**{self.name: value})
+            method = qs.exclude if self.exclude else qs.filter
+            return method(**{self.name: value})
         return qs
 
 
